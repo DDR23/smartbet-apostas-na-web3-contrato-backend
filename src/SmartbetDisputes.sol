@@ -30,6 +30,16 @@ contract SmartbetDisputes {
   uint256[] private disputeIds;
   uint256 private currentDisputeId;
 
+  struct Bet {
+    uint256 disputeId;
+    uint8 candidateNumber;
+    uint256 amount;
+    bool collected;
+  }
+
+  mapping(address => mapping(uint256 => Bet)) public walletBets;
+  mapping(address => uint256[]) private walletDisputeIds;
+
   constructor() {
     owner = msg.sender;
   }
@@ -63,4 +73,45 @@ contract SmartbetDisputes {
   function getAllDisputeIds() public view returns (uint256[] memory) {
     return (disputeIds);
   }
+
+  function createBet(uint256 _disputeId, uint8 _candidateNumber) public payable {
+    require(msg.value > 0, "Bet value must be greater than zero");
+    require(disputes[_disputeId].disputeWinner == 0, "Dispute already finished");
+    require(walletBets[msg.sender][_disputeId].amount == 0, "Already bet on this dispute");
+
+    Dispute storage dispute = disputes[_disputeId];
+
+    uint256 fee = (msg.value * FEE_PERCENTAGE) / 10000;
+    uint256 netBet = msg.value - fee;
+
+    if (_candidateNumber == 1) {
+      dispute.disputeCandidateBet1 += netBet;
+    } else {
+      dispute.disputeCandidateBet2 += netBet;
+    }
+
+    dispute.disputeFee += fee;
+    dispute.disputeNetPrize += netBet;
+
+    Bet memory newBet = Bet({
+      disputeId: _disputeId,
+      candidateNumber: _candidateNumber,
+      amount: netBet,
+      collected: false
+    });
+
+    walletBets[msg.sender][_disputeId] = newBet;
+    walletDisputeIds[msg.sender].push(_disputeId);
+  }
+
+  function getAllWalletBets(address _wallet) public view returns (uint256[] memory) {
+    return walletDisputeIds[_wallet];
+  }
+
+  function getBetDetails(address _wallet, uint256 _disputeId) public view returns (Bet memory) {
+    return walletBets[_wallet][_disputeId];
+  }
+
+  //TODO - finishBet
+  //TODO - Claim
 }
