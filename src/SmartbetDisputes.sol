@@ -107,4 +107,11 @@ contract SmartbetDisputes {
   function getAllWalletBets(address _wallet) public view returns (uint256[] memory) {
     return walletDisputeIds[_wallet];
   }
+
+  function getBetDetails(address _wallet, uint256 _disputeId) public view returns (Bet memory) {
+    return walletBets[_wallet][_disputeId];
+  }
+
+  //TODO - finishBet
+  //TODO - Claim
 }
