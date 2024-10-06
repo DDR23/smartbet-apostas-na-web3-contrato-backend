@@ -59,4 +59,8 @@ contract SmartbetDisputes {
     });
     disputeIds.push(currentDisputeId);
   }
+
+  function getAllDisputeIds() public view returns (uint256[] memory) {
+    return (disputeIds);
+  }
 }
