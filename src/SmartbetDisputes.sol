@@ -33,4 +33,30 @@ contract SmartbetDisputes {
   constructor() {
     owner = msg.sender;
   }
+
+  function createDispute(
+    string memory _disputeName,
+    string memory _disputeWallpaper,
+    string memory _disputeCandidate1,
+    string memory _disputeCandidateImage1,
+    string memory _disputeCandidate2,
+    string memory _disputeCandidateImage2
+  ) public onlyOwner {
+    currentDisputeId++;
+    disputes[currentDisputeId] = Dispute({
+      disputeName: _disputeName,
+      disputeWallpaper: _disputeWallpaper,
+      disputeCandidate1: _disputeCandidate1,
+      disputeCandidateImage1: _disputeCandidateImage1,
+      disputeCandidate2: _disputeCandidate2,
+      disputeCandidateImage2: _disputeCandidateImage2,
+      disputeCandidateBet1: 0,
+      disputeCandidateBet2: 0,
+      disputeWinner: 0,
+      disputeNetPrize: 0,
+      disputeFinishTime: 0,
+      disputeFee: 0
+    });
+    disputeIds.push(currentDisputeId);
+  }
 }
