@@ -4,7 +4,6 @@ pragma solidity 0.8.26;
 contract SmartbetDisputes {
   address public owner;
   uint256 private constant FEE_PERCENTAGE = 1000;
-  uint256 private constant CLAIM_PERIOD = 30 days;
 
   modifier onlyOwner() {
     require(msg.sender == owner, "Only owner can call this function");
@@ -22,7 +21,6 @@ contract SmartbetDisputes {
     uint256 disputeCandidateBet2;
     uint8 disputeWinner;
     uint256 disputeNetPrize;
-    uint256 disputeFinishTime;
     uint256 disputeFee;
   }
 
@@ -64,7 +62,6 @@ contract SmartbetDisputes {
       disputeCandidateBet2: 0,
       disputeWinner: 0,
       disputeNetPrize: 0,
-      disputeFinishTime: 0,
       disputeFee: 0
     });
     disputeIds.push(currentDisputeId);
@@ -112,6 +109,17 @@ contract SmartbetDisputes {
     return walletBets[_wallet][_disputeId];
   }
 
-  //TODO - finishBet
+  function finishDispute(uint256 _disputeId, uint8 _winner) public onlyOwner {
+    require(disputes[_disputeId].disputeWinner == 0, "Dispute already finished");
+    require(_winner == 1 || _winner == 2, "Invalid winner");
+
+    Dispute storage dispute = disputes[_disputeId];
+    dispute.disputeWinner = _winner;
+    
+    uint256 feeToTransfer = dispute.disputeFee;
+    dispute.disputeFee = 0;
+    payable(owner).transfer(feeToTransfer);
+  }
+
   //TODO - Claim
 }
