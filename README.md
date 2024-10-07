@@ -12,13 +12,13 @@ O SmartbetDisputes é um sistema inovador de apostas descentralizadas implementa
 
 3. **Automação**: O contrato inteligente gerencia automaticamente a criação de disputas, o processamento de apostas e a distribuição de prêmios, reduzindo erros humanos e aumentando a eficiência.
 
-4. **Segurança**: Implementado em Solidity ^0.8.26, o contrato incorpora as melhores práticas de segurança para proteger os fundos dos usuários e a integridade do sistema.
+4. **Segurança**: Implementado em Solidity 0.8.26, o contrato incorpora as melhores práticas de segurança para proteger os fundos dos usuários e a integridade do sistema.
 
 5. **Flexibilidade**: O sistema permite a criação de disputas com dois candidatos, adaptável a diversos cenários de apostas.
 
 ### Detalhes Técnicos:
 
-- **Rede**: Implantado na rede de teste Amoy
+- **Rede**: Polygon Amoy Testnet
 - **Endereço do Contrato**: 0x001e4F4E8Cf257FB83EF8B37c3F139E102D4bF14
 - **Hash da Transação**: 0xbe7878b78aadaa350b691e8917a20283354bf6f587cacc3bab6722e729411471
 - **Bloco**: 12906396
@@ -63,7 +63,7 @@ Este projeto é um exemplo de como a tecnologia blockchain pode revolucionar ind
 ## Como Começar
 
 ### Pré-requisitos
-- Solidity ^0.8.26
+- Solidity 0.8.26
 - Ambiente de desenvolvimento Ethereum (ex: Truffle, Hardhat)
 - Carteira Ethereum (ex: MetaMask)
 
