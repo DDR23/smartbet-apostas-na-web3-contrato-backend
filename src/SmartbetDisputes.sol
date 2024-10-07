@@ -32,10 +32,11 @@ contract SmartbetDisputes {
     uint256 disputeId;
     uint8 candidateNumber;
     uint256 amount;
+    uint256 collectedAmount;
     bool collected;
   }
 
-  mapping(address => mapping(uint256 => Bet)) public walletBets;
+  mapping(address => mapping(uint256 => Bet)) private walletBets;
   mapping(address => uint256[]) private walletDisputeIds;
 
   constructor() {
@@ -94,7 +95,8 @@ contract SmartbetDisputes {
       disputeId: _disputeId,
       candidateNumber: _candidateNumber,
       amount: netBet,
-      collected: false
+      collected: false,
+      collectedAmount: 0
     });
 
     walletBets[msg.sender][_disputeId] = newBet;
@@ -121,5 +123,25 @@ contract SmartbetDisputes {
     payable(owner).transfer(feeToTransfer);
   }
 
-  //TODO - Claim
+  function claimPrize(uint256 _disputeId) public {
+    Bet storage bet = walletBets[msg.sender][_disputeId];
+    Dispute storage dispute = disputes[_disputeId];
+
+    require(bet.amount > 0, "No bet found");
+    require(dispute.disputeWinner != 0, "Dispute not finished");
+    require(!bet.collected, "Bet already collected");
+    require(bet.candidateNumber == dispute.disputeWinner, "You didn't bet on the winning candidate");
+
+    uint256 winningCandidateBet = dispute.disputeWinner == 1 ? dispute.disputeCandidateBet1 : dispute.disputeCandidateBet2;
+    uint256 losingCandidateBet = dispute.disputeWinner == 1 ? dispute.disputeCandidateBet2 : dispute.disputeCandidateBet1;
+    
+    uint256 ratio = (bet.amount * 1e18) / winningCandidateBet;
+    uint256 individualPrize = ((winningCandidateBet + losingCandidateBet) * ratio) / 1e18;
+
+    bet.collected = true;
+    bet.collectedAmount = individualPrize;
+    dispute.disputeNetPrize -= individualPrize;
+
+    payable(msg.sender).transfer(individualPrize);
+  }
 }
