@@ -117,7 +117,7 @@ contract SmartbetDisputes {
 
     Dispute storage dispute = disputes[_disputeId];
     dispute.disputeWinner = _winner;
-    
+
     uint256 feeToTransfer = dispute.disputeFee;
     dispute.disputeFee = 0;
     payable(owner).transfer(feeToTransfer);
@@ -132,9 +132,13 @@ contract SmartbetDisputes {
     require(!bet.collected, "Bet already collected");
     require(bet.candidateNumber == dispute.disputeWinner, "You didn't bet on the winning candidate");
 
-    uint256 winningCandidateBet = dispute.disputeWinner == 1 ? dispute.disputeCandidateBet1 : dispute.disputeCandidateBet2;
-    uint256 losingCandidateBet = dispute.disputeWinner == 1 ? dispute.disputeCandidateBet2 : dispute.disputeCandidateBet1;
-    
+    uint256 winningCandidateBet = dispute.disputeWinner == 1
+      ? dispute.disputeCandidateBet1
+      : dispute.disputeCandidateBet2;
+    uint256 losingCandidateBet = dispute.disputeWinner == 1
+      ? dispute.disputeCandidateBet2
+      : dispute.disputeCandidateBet1;
+
     uint256 ratio = (bet.amount * 1e18) / winningCandidateBet;
     uint256 individualPrize = ((winningCandidateBet + losingCandidateBet) * ratio) / 1e18;
 

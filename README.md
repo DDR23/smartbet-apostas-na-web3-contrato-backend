@@ -1,12 +1,38 @@
 # SmartbetDisputes - Contrato Inteligente de Apostas Descentralizadas
 
 ## Sobre o Projeto
-Este projeto implementa um sistema de apostas descentralizado usando um contrato inteligente em Solidity. Ele permite que os usuários criem e participem de disputas (eventos de apostas) na blockchain Ethereum.
 
-contrato hospedado na rede: amoy testnet
-endereço do contrato: 0x0901850241990199019901990199019901990199
-github do dapp: https://github.com/matheus-mello/smartbet-disputes
+O SmartbetDisputes é um sistema inovador de apostas descentralizadas implementado como um contrato inteligente na blockchain Ethereum. Este projeto foi desenvolvido para demonstrar as capacidades dos contratos inteligentes em criar um ambiente de apostas transparente, justo e automatizado.
 
+### Principais Características:
+
+1. **Descentralização**: Operando na blockchain Ethereum, o sistema elimina a necessidade de intermediários tradicionais, oferecendo uma plataforma de apostas verdadeiramente peer-to-peer.
+
+2. **Transparência**: Todas as transações e lógica do contrato são públicas e verificáveis na blockchain, garantindo total transparência para os usuários.
+
+3. **Automação**: O contrato inteligente gerencia automaticamente a criação de disputas, o processamento de apostas e a distribuição de prêmios, reduzindo erros humanos e aumentando a eficiência.
+
+4. **Segurança**: Implementado em Solidity ^0.8.26, o contrato incorpora as melhores práticas de segurança para proteger os fundos dos usuários e a integridade do sistema.
+
+5. **Flexibilidade**: O sistema permite a criação de disputas com dois candidatos, adaptável a diversos cenários de apostas.
+
+### Detalhes Técnicos:
+
+- **Rede**: Implantado na rede de teste Amoy
+- **Endereço do Contrato**: 0x001e4F4E8Cf257FB83EF8B37c3F139E102D4bF14
+- **Hash da Transação**: 0xbe7878b78aadaa350b691e8917a20283354bf6f587cacc3bab6722e729411471
+- **Bloco**: 12906396
+- **Codigo fonte do contrato em**: [Polygon PoS Chain Amoy Testnet Explorer](https://amoy.polygonscan.com/address/0x001e4F4E8Cf257FB83EF8B37c3F139E102D4bF14#code)
+- **Repositório do DApp**: [atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS](https://github.com/DDR23/atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS)
+
+### Objetivos do Projeto:
+
+1. Demonstrar a aplicação prática de contratos inteligentes em sistemas de apostas.
+2. Oferecer uma alternativa descentralizada aos sistemas de apostas tradicionais.
+3. Explorar os desafios e soluções na implementação de lógica de negócios complexa em contratos inteligentes.
+4. Servir como um recurso educacional para desenvolvedores interessados em blockchain e Solidity.
+
+Este projeto é um exemplo de como a tecnologia blockchain pode revolucionar indústrias tradicionais, oferecendo soluções mais transparentes, eficientes e acessíveis globalmente.
 
 ## Funcionalidades
 - Criar disputas com dois candidatos
