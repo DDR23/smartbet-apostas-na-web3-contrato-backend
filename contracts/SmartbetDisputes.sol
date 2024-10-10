@@ -21,6 +21,7 @@ contract SmartbetDisputes {
     uint256 disputeCandidateBet2;
     uint8 disputeWinner;
     uint256 disputeNetPrize;
+    uint256 disputeTotalPrize;
     uint256 disputeFee;
   }
 
@@ -63,6 +64,7 @@ contract SmartbetDisputes {
       disputeCandidateBet2: 0,
       disputeWinner: 0,
       disputeNetPrize: 0,
+      disputeTotalPrize: 0,
       disputeFee: 0
     });
     disputeIds.push(currentDisputeId);
@@ -90,6 +92,7 @@ contract SmartbetDisputes {
 
     dispute.disputeFee += fee;
     dispute.disputeNetPrize += netBet;
+    dispute.disputeTotalPrize += netBet;
 
     Bet memory newBet = Bet({
       disputeId: _disputeId,
@@ -119,7 +122,6 @@ contract SmartbetDisputes {
     dispute.disputeWinner = _winner;
 
     uint256 feeToTransfer = dispute.disputeFee;
-    dispute.disputeFee = 0;
     payable(owner).transfer(feeToTransfer);
   }
 

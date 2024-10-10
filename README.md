@@ -1,7 +1,5 @@
 # SmartbetDisputes - Contrato Inteligente de Apostas Descentralizadas
 
-<!-- TODO - adicionar estado de total acumulado -->
-
 ## Sobre o Projeto
 
 O SmartbetDisputes é um sistema inovador de apostas descentralizadas implementado como um contrato inteligente na blockchain Ethereum. Este projeto foi desenvolvido para demonstrar as capacidades dos contratos inteligentes em criar um ambiente de apostas transparente, justo e automatizado.
@@ -66,7 +64,7 @@ Este projeto é um exemplo de como a tecnologia blockchain pode revolucionar ind
 
 ### Pré-requisitos
 - Solidity 0.8.26
-- Ambiente de desenvolvimento Ethereum (ex: Truffle, Hardhat)
+- Ambiente de desenvolvimento Ethereum (ex: Remix, Truffle, Hardhat)
 - Carteira Ethereum (ex: MetaMask)
 
 ### Implantação
