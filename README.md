@@ -4,6 +4,15 @@
 
 O SmartbetDisputes é um sistema inovador de apostas descentralizadas implementado como um contrato inteligente na blockchain Ethereum. Este projeto foi desenvolvido para demonstrar as capacidades dos contratos inteligentes em criar um ambiente de apostas transparente, justo e automatizado.
 
+### Detalhes Técnicos:
+
+- **Rede**: Polygon Amoy Testnet
+- **Endereço do Contrato**: 0x4a54ec234FBaCA5de26f6847894C05cdB5F7F5F8
+- **Hash da Transação**: 0x14c0a3df7745adcf95b9b3d924ec64923183ae0fe2277645a310b107952a1c83
+- **Bloco**: 13014671
+- **Codigo fonte do contrato em**: [Polygon PoS Chain Amoy Testnet Explorer](https://amoy.polygonscan.com/address/0x4a54ec234FBaCA5de26f6847894C05cdB5F7F5F8#code)
+- **Repositório do DApp**: [atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS](https://github.com/DDR23/atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS)
+
 ### Principais Características:
 
 1. **Descentralização**: Operando na blockchain Ethereum, o sistema elimina a necessidade de intermediários tradicionais, oferecendo uma plataforma de apostas verdadeiramente peer-to-peer.
@@ -15,15 +24,6 @@ O SmartbetDisputes é um sistema inovador de apostas descentralizadas implementa
 4. **Segurança**: Implementado em Solidity 0.8.26, o contrato incorpora as melhores práticas de segurança para proteger os fundos dos usuários e a integridade do sistema.
 
 5. **Flexibilidade**: O sistema permite a criação de disputas com dois candidatos, adaptável a diversos cenários de apostas.
-
-### Detalhes Técnicos:
-
-- **Rede**: Polygon Amoy Testnet
-- **Endereço do Contrato**: 0x4a54ec234FBaCA5de26f6847894C05cdB5F7F5F8
-- **Hash da Transação**: 0x14c0a3df7745adcf95b9b3d924ec64923183ae0fe2277645a310b107952a1c83
-- **Bloco**: 13014671
-- **Codigo fonte do contrato em**: [Polygon PoS Chain Amoy Testnet Explorer](https://amoy.polygonscan.com/address/0x4a54ec234FBaCA5de26f6847894C05cdB5F7F5F8#code)
-- **Repositório do DApp**: [atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS](https://github.com/DDR23/atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS)
 
 ### Objetivos do Projeto:
 
@@ -52,6 +52,7 @@ Este projeto é um exemplo de como a tecnologia blockchain pode revolucionar ind
 - `createBet`: Permite aos usuários fazerem apostas em uma disputa.
 - `finishDispute`: Permite ao proprietário resolver uma disputa declarando um vencedor.
 - `claimPrize`: Permite aos vencedores reivindicarem seus prêmios.
+- `toggleDisputeStatus`: Permite que o owner gerencie o status da disputa, para filtar quais disputas devem aparecer pro usuario.
 
 ### Estrutura de Taxas
 - Uma taxa de 10% é deduzida de cada aposta.
