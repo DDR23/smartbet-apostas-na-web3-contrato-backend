@@ -19,10 +19,10 @@ O SmartbetDisputes é um sistema inovador de apostas descentralizadas implementa
 ### Detalhes Técnicos:
 
 - **Rede**: Polygon Amoy Testnet
-- **Endereço do Contrato**: 0x001e4F4E8Cf257FB83EF8B37c3F139E102D4bF14
-- **Hash da Transação**: 0xbe7878b78aadaa350b691e8917a20283354bf6f587cacc3bab6722e729411471
-- **Bloco**: 12906396
-- **Codigo fonte do contrato em**: [Polygon PoS Chain Amoy Testnet Explorer](https://amoy.polygonscan.com/address/0x001e4F4E8Cf257FB83EF8B37c3F139E102D4bF14#code)
+- **Endereço do Contrato**: 0x4a54ec234FBaCA5de26f6847894C05cdB5F7F5F8
+- **Hash da Transação**: 0x14c0a3df7745adcf95b9b3d924ec64923183ae0fe2277645a310b107952a1c83
+- **Bloco**: 13014671
+- **Codigo fonte do contrato em**: [Polygon PoS Chain Amoy Testnet Explorer](https://amoy.polygonscan.com/address/0x4a54ec234FBaCA5de26f6847894C05cdB5F7F5F8#code)
 - **Repositório do DApp**: [atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS](https://github.com/DDR23/atividade---DAPP---meu-primeiro-smartcontract---LUIZTOOLS)
 
 ### Objetivos do Projeto:

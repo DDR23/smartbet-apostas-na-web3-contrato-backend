@@ -21,8 +21,8 @@ contract SmartbetDisputes {
     uint256 disputeCandidateBet2;
     uint8 disputeWinner;
     uint256 disputeNetPrize;
-    uint256 disputeTotalPrize;
     uint256 disputeFee;
+    bool disputeStatus;
   }
 
   mapping(uint256 => Dispute) public disputes;
@@ -64,8 +64,8 @@ contract SmartbetDisputes {
       disputeCandidateBet2: 0,
       disputeWinner: 0,
       disputeNetPrize: 0,
-      disputeTotalPrize: 0,
-      disputeFee: 0
+      disputeFee: 0,
+      disputeStatus: true
     });
     disputeIds.push(currentDisputeId);
   }
@@ -92,7 +92,6 @@ contract SmartbetDisputes {
 
     dispute.disputeFee += fee;
     dispute.disputeNetPrize += netBet;
-    dispute.disputeTotalPrize += netBet;
 
     Bet memory newBet = Bet({
       disputeId: _disputeId,
@@ -125,6 +124,12 @@ contract SmartbetDisputes {
     payable(owner).transfer(feeToTransfer);
   }
 
+  function toggleDisputeStatus(uint256 _disputeId, bool _status) public onlyOwner {
+    require(_status == true || _status == false, "Status must be true or false");
+    Dispute storage dispute = disputes[_disputeId];
+    dispute.disputeStatus = _status;
+  }
+
   function claimPrize(uint256 _disputeId) public {
     Bet storage bet = walletBets[msg.sender][_disputeId];
     Dispute storage dispute = disputes[_disputeId];
@@ -146,7 +151,6 @@ contract SmartbetDisputes {
 
     bet.collected = true;
     bet.collectedAmount = individualPrize;
-    dispute.disputeNetPrize -= individualPrize;
 
     payable(msg.sender).transfer(individualPrize);
   }
