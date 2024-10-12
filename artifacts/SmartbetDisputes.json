@@ -39,32 +39,32 @@
     "inputs": [
       {
         "internalType": "string",
-        "name": "_disputeName",
+        "name": "_Name",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "_disputeWallpaper",
+        "name": "_Wallpaper",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "_disputeCandidate1",
+        "name": "_Candidate1",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "_disputeCandidateImage1",
+        "name": "_CandidateImage1",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "_disputeCandidate2",
+        "name": "_Candidate2",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "_disputeCandidateImage2",
+        "name": "_CandidateImage2",
         "type": "string"
       }
     ],
@@ -85,62 +85,62 @@
     "outputs": [
       {
         "internalType": "string",
-        "name": "disputeName",
+        "name": "Name",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "disputeWallpaper",
+        "name": "Wallpaper",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "disputeCandidate1",
+        "name": "Candidate1",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "disputeCandidateImage1",
+        "name": "CandidateImage1",
         "type": "string"
       },
       {
         "internalType": "uint256",
-        "name": "disputeCandidateBet1",
+        "name": "CandidateBet1",
         "type": "uint256"
       },
       {
         "internalType": "string",
-        "name": "disputeCandidate2",
+        "name": "Candidate2",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "disputeCandidateImage2",
+        "name": "CandidateImage2",
         "type": "string"
       },
       {
         "internalType": "uint256",
-        "name": "disputeCandidateBet2",
+        "name": "CandidateBet2",
         "type": "uint256"
       },
       {
         "internalType": "uint8",
-        "name": "disputeWinner",
+        "name": "Winner",
         "type": "uint8"
       },
       {
         "internalType": "uint256",
-        "name": "disputeNetPrize",
+        "name": "NetPrize",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "disputeFee",
+        "name": "Fee",
         "type": "uint256"
       },
       {
         "internalType": "bool",
-        "name": "disputeStatus",
+        "name": "Status",
         "type": "bool"
       }
     ],
@@ -240,7 +240,7 @@
             "type": "bool"
           }
         ],
-        "internalType": "struct SmartbetDisputes.Bet",
+        "internalType": "struct SmartbetContract.Bet",
         "name": "",
         "type": "tuple"
       }
@@ -274,7 +274,7 @@
         "type": "bool"
       }
     ],
-    "name": "toggleDisputeStatus",
+    "name": "toggleStatus",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
