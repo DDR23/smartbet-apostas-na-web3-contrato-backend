@@ -1,4 +1,4 @@
-# SmartbetDisputes - Contrato Inteligente de Apostas Descentralizadas
+# smartbet-apostas-na-web3-contrato-backend
 
 ## Sobre o Projeto
 
